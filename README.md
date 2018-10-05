@@ -3,10 +3,10 @@
 A simple SDK which you can integrate in your existing app and access Pizza Ordering menu directly on just 1 command.
 
 ![Image of sample pizza menu 1]
-(/sample_images/1.png)
+(https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/1.png)
 
 ![Image of sample pizza menu 2]
-(/sample_images/2.png)
+(https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/2.png)
 
 
 ## Installation
