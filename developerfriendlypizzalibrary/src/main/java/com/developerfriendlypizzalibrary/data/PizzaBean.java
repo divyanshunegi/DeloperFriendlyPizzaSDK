@@ -77,7 +77,7 @@ public class PizzaBean {
     }
 
     public double getPizzaCost() {
-        return Math.round(pizzaCost * 100.0) / 100.0;
+        return pizzaCost;
     }
 
     public void setPizzaCost(float pizzaCost) {

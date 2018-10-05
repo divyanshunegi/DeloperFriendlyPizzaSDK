@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.developerfriendlypizzalibrary.R;
 import com.developerfriendlypizzalibrary.data.PizzaBean;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PizzaFlavorListAdapter extends RecyclerView.Adapter<PizzaFlavorListAdapter.PizzaViewHolder> {
@@ -34,7 +35,11 @@ public class PizzaFlavorListAdapter extends RecyclerView.Adapter<PizzaFlavorList
     public void onBindViewHolder(PizzaViewHolder holder, int position) {
         final PizzaBean pizza = pizzaList.get(position);
         holder.pizzaImage.setImageResource(pizza.getPizzaImageResourceId());
-        holder.pizzaCost.setText("$ " + pizza.getPizzaCost());
+
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+
+        holder.pizzaCost.setText("$ " + df.format(pizza.getPizzaCost()));
         holder.pizzaTitle.setText(pizza.getPizzaName());
         holder.pizzaDescription.setText(pizza.getPizzaDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {

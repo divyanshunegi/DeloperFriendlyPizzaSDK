@@ -5,6 +5,7 @@ import com.developerfriendlypizzalibrary.data.DataRepository;
 import com.developerfriendlypizzalibrary.data.PizzaBean;
 import com.developerfriendlypizzalibrary.data.PizzaCartBean;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -45,14 +46,52 @@ public class PizzaMenuPresenter implements DataRepository.DataListner, PizzaMenu
 
         if (pizzaCart.orderedPizzas.size() < 2) {
             if (pizzaCart.orderedPizzas.size() == 0) {
-                pizzaMenuView.updateFirstHalf(pizza);
+                pizzaMenuView.updateFirstHalf(pizza.getPizzaImageResourceId());
             } else {
-                pizzaMenuView.updateSecondHalf(pizza);
+                pizzaMenuView.updateSecondHalf(pizza.getPizzaImageResourceId());
             }
             pizzaCart.orderedPizzas.add(pizza);
             pizzaMenuView.updatePrice(getTotalPrice());
         } else {
-            pizzaMenuView.cartFullError(R.string.cart_full_error);
+            pizzaMenuView.cartError(R.string.cart_full_error);
+        }
+    }
+
+    @Override
+    public void refreshCart() {
+        pizzaCart = null;
+        pizzaMenuView.updateFirstHalf(R.drawable.pizza_placeholder);
+        pizzaMenuView.updateSecondHalf(R.drawable.pizza_placeholder);
+        pizzaMenuView.updatePrice("Total : $ 0.00");
+        pizzaMenuView.cartRefreshed();
+    }
+
+    @Override
+    public void showOrder() {
+        if (pizzaCart == null) {
+            pizzaMenuView.cartError(R.string.cart_empty_error);
+        } else if (pizzaCart.orderedPizzas.size() <= 0) {
+            pizzaMenuView.cartError(R.string.cart_empty_error);
+        } else {
+            String orderDetail = "You have :\n";
+            for (PizzaBean pizzaBean : pizzaCart.orderedPizzas) {
+                orderDetail += "1/2 x " + pizzaBean.getPizzaName() + "\n";
+                orderDetail += "\n";
+            }
+            orderDetail += "Order Id : "+pizzaCart.orderId +"\n\n";
+            pizzaMenuView.showCartDialog(orderDetail, getTotalPrice());
+        }
+    }
+
+    @Override
+    public void orderNow() {
+        if (pizzaCart == null) {
+            pizzaMenuView.cartError(R.string.cart_empty_error);
+        } else if (pizzaCart.orderedPizzas.size() < 2) {
+            pizzaMenuView.cartError(R.string.cart_not_full_error);
+        } else {
+            //dataRepository.sendOrderRequest();
+            pizzaMenuView.pizzaOrdered();
         }
     }
 
@@ -63,6 +102,9 @@ public class PizzaMenuPresenter implements DataRepository.DataListner, PizzaMenu
             price += pizzaBean.getPizzaCost();
         }
 
-        return "Total : $ " + (price / 2);
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+
+        return "Total : $ " + (df.format(price / 2));
     }
 }
