@@ -23,7 +23,7 @@ after this add the dependency with the latest version of the PizzaSDK library
 
 ```
 dependencies {
-	        implementation 'com.github.divyanshunegi:DeloperFriendlyPizzaSDK:Tag'
+	        implementation 'com.github.divyanshunegi:DeloperFriendlyPizzaSDK:1.1'
 	}
 ```
 
