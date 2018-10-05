@@ -2,11 +2,9 @@
 
 A simple SDK which you can integrate in your existing app and access Pizza Ordering menu directly on just 1 command.
 
-<img src="https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/1.png" alt="sample image 1" width="100" height="240">
-![Image of sample pizza menu 1](https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/1.png | width = 100)
+<img src="https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/1.png" alt="sample image 1" width="200" height="350">
 
-![Image of sample pizza menu 2](https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/2.png | width = 100)
-
+<img src="https://github.com/divyanshunegi/DeloperFriendlyPizzaSDK/blob/master/sample_images/2.png" alt="sample image 2" width="200" height="350">
 
 ## Installation
 
