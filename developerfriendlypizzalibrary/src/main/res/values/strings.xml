@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DeveloperFriendlyPizzaLibrary</string>
+    <string name="pizza">🍕</string>
+    <string name="menuTitle">🍕Pizza Menu🍕</string>
+    <string name="cart_full_error">Pizza Cart is full, you can ony select 2 half flavors in this version</string>
 </resources>

@@ -1,2 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.developerfriendlypizzalibrary" />
+    package="com.developerfriendlypizzalibrary" >
+
+    <application>
+        <activity android:name=".ui.PizzaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/dialogActivity"
+            android:excludeFromRecents="true"/>
+    </application>
+
+</manifest>

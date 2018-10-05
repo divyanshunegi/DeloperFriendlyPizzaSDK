@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dialog_light" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#333333</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:background">#ffffff</item>
+    </style>
+
+    <style name="dialogActivity" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>
